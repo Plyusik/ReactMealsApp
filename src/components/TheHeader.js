@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import classes from "./TheHeader.module.css";
 import Button from "./UI/Button";
@@ -20,6 +20,25 @@ const TheHeader = (props) => {
          price: itemData[0].price,
       });
    });
+
+   let totalAmount = props.cart.reduce((acc, cur) => {
+      return +acc + cur.amount;
+   }, 0);
+
+   const [btnClasses, setBtnClasses] = useState("cart-counter");
+   useEffect(() => {
+      if (totalAmount > 0) {
+         setBtnClasses(`cart-counter animate-btn`);
+         const timeoutID = setTimeout(() => {
+            setBtnClasses(`cart-counter`);
+         }, 300);
+         return () => {
+            clearTimeout(timeoutID);
+         };
+      } else {
+         return;
+      }
+   }, [totalAmount]);
 
    const [isCartShown, setIsCartShown] = useState(false);
    const onShowCart = () => {
@@ -52,7 +71,14 @@ const TheHeader = (props) => {
                            ></CartItem>
                         );
                      })}
-                     <TotalItem total={cartExtended.reduce((acc,cur) => {return (acc + cur.amount*cur.price)},0).toFixed(2)} onClose={onHideCart} />
+                     <TotalItem
+                        total={cartExtended
+                           .reduce((acc, cur) => {
+                              return acc + cur.amount * cur.price;
+                           }, 0)
+                           .toFixed(2)}
+                        onClose={onHideCart}
+                     />
                   </Card>
                </Overlay>,
                document.getElementById("overlay")
@@ -63,11 +89,7 @@ const TheHeader = (props) => {
             <Button type="button" className="btn--darken" onClick={onShowCart}>
                <CartIcon />
                <span> Your Cart</span>
-               <div className="cart-counter">
-                  {props.cart.reduce((acc, cur) => {
-                     return +acc + cur.amount;
-                  }, 0)}
-               </div>
+               <div className={btnClasses}>{totalAmount}</div>
             </Button>
          </header>
       </>

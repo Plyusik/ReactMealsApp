@@ -35,3 +35,13 @@
     display: flex;
     justify-content: center;
 }
+.animate-btn {
+    animation-name: bump;
+    animation-duration: .3s;
+}
+
+@keyframes bump {
+    from {transform: scale(1)}
+    50% {transform: scale(1.2)}
+    to {transform: scale(1)}
+}
