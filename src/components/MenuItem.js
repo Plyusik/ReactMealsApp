@@ -22,7 +22,7 @@ const MenuItem = (props) => {
                <Input
                   value={props.qty}
                   type="number"
-                  id="amount"
+                  id={`amount__${props.name}`}
                   label="Amount"
                   inputClassName={classes["menu-item__cart-data--amount"]}
                   onInputQtyChange = {props.onQtyChange}
