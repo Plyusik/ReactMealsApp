@@ -1,0 +1,24 @@
+.header {
+    background-color: brown;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+.header__logo {
+    color: white;
+}
+
+.cart-card {
+    background-color: white;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

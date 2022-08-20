@@ -1,0 +1,38 @@
+.menu-item {
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 0.5rem;
+   border-bottom: 1px solid rgb(185, 185, 185);
+   margin: .5rem 0;
+}
+.menu-item__data {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+}
+.menu-item__data--name {
+   font-weight: bold;
+}
+.menu-item__data--descr {
+   font-style: italic;
+   color: rgb(131, 131, 131);
+}
+.menu-item__data--price {
+   font-weight: bold;
+   color: orange;
+}
+.menu-item__cart-data {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   justify-content: center;
+}
+.menu-item__cart-data--input-div {
+    text-align: end;
+    margin-bottom: 0.5rem;
+}
+.menu-item__cart-data--amount {
+    width: 15%;
+    margin-left: .5rem;
+}

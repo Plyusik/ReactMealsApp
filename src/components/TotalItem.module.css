@@ -1,0 +1,17 @@
+.total {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttons {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.close-btn {
+    background-color: transparent;
+    border: 1px solid brown;
+    color: brown;
+}

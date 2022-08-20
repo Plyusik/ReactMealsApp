@@ -1,0 +1,37 @@
+.btn {
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(104, 24, 24);
+    color: white;
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:0.5rem
+}
+.btn svg {
+    width: 2rem;
+}
+.btn span {
+    display: inline-block;
+    font-size: 1rem;
+}
+.btn--darken {
+    background-color: rgb(70, 15, 15);
+}
+
+.cart-counter {
+    width: 5%;
+    height: 5%;
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+    background-color: brown;
+    color:white;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+}
